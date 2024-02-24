@@ -1,5 +1,109 @@
+@font-face {
+    font-family: 'outfit';
+    src: url(./../assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'young-serif';
+    src: url(./../assets/fonts/young-serif/YoungSerif-Regular.ttf);
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: outfit;
+}
+
+.todo-app{
+    width:auto;
+    padding: 2rem 1.5rem;
+    h1{
+        width: 100%;
+        font-family: young-serif;
+        font-size: 50px;
+        border-bottom: 1px solid #34495E;
+        margin-bottom: 20px;
+    }
+    background-color: #fff;
+    ul li{
+        list-style: none; 
+        font-size: 17px;
+        padding: 12px 8px 12px 50px;
+        user-select: none;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-image: url(./../assets/images/unchecked.png);
+            background-size: cover;
+            background-position: center;
+            left: 8px;
+    
+        }
+        span{
+            position: absolute;
+            right: 0;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            font-size: 22px;
+            color: #555;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            &:hover{
+                background-color: #edeef0;
+            }
+        }
+    }
+    .task-input{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 5px 16px 5px 5px;
+        background-color: #eddef0;
+        input{
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 15px;
+
+        }
+        button{
+            border-radius: 5px 16px;
+            padding: 30px 40px;
+            border: none;
+            background: #fe653b;
+            color: #fff;
+            font-size: 20px;
+        }
+    }
+    .checked{
+        color: #555;
+        text-decoration: line-through;
+        &::before{
+            background-image: url(./../assets/images/checked.png);
+        }
+    }
+}
+
+
+@media screen and (min-width:1024px){
+    .container{
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(135deg,#FFC300,#FF5733);
+        display: grid;
+        justify-content: center;
+    }
+    .todo-app{
+        width:100%;
+        padding: 2rem 1.6rem;
+        border-radius: 30px;
+        height: fit-content;
+
+    }
 }
